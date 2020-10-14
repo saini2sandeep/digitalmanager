@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdkVersion 29
@@ -23,15 +27,52 @@ android {
         }
     }
 
+    // Enables data binding.
+    dataBinding {
+        enabled = true
+    }
+
+    //enable Java 8 in project
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    kapt 'com.android.databinding:compiler:2.3.1'
+
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+
+    implementation 'com.facebook.stetho:stetho-okhttp:1.5.1'
+    implementation 'com.facebook.stetho:stetho-urlconnection:1.5.1'
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+
+
+    implementation SupportLibraries.constraint
+
+    implementation Room.lib
+//    implementation Room.rx
+//    implementation Room.ktx
+    kapt Room.compiler
+
+
+    implementation Navigation.lib
+    implementation Navigation.nav_ui
 }

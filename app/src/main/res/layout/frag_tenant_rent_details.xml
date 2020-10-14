@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/rent_detail_room_no_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:hint="Room number"
+            android:inputType="text"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@+id/rent_detail_bed_no_et"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/rent_detail_bed_no_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:hint="Bed number"
+            android:inputType="text"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/rent_detail_room_no_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rent_detail_room_no_et"
+            app:layout_constraintTop_toTopOf="@+id/rent_detail_room_no_et" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/rent_detail_monthly_rent_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:hint="Monthly rent"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@+id/rent_detail_rent_advance_et"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rent_detail_room_no_et" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/rent_detail_rent_advance_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:hint="Rent advance"
+            android:inputType="number"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/rent_detail_monthly_rent_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rent_detail_monthly_rent_et"
+            app:layout_constraintTop_toTopOf="@+id/rent_detail_monthly_rent_et" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/rent_detail_joining_date_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:hint="Joining date"
+            android:inputType="text"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rent_detail_monthly_rent_et" />
+
+        <TextView
+            android:id="@+id/rent_detail_address_proof_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:singleLine="true"
+            android:text="Address Proof"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rent_detail_joining_date_et" />
+
+        <TextView
+            android:id="@+id/rent_detail_address_proof_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:singleLine="true"
+            android:text="Address Proof drop down"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rent_detail_address_proof_tv" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

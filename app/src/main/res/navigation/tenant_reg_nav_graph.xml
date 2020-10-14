@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This is a resource that contains all navigation-related information in one centralized location.
+ This includes all the places in your app, known as destinations,
+ and possible paths a user could take through your app.-->
+
+
+<!--    <navigation> is the root node of every navigation graph.
+        <navigation> contains one or more destinations, represented by <activity> or <fragment> elements.
+        app:startDestination is an attribute that specifies the destination that is launched by default when the user first opens the app. -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tenant_reg_nav_graph"
+    app:startDestination="@id/fragTenantPersonalDetails">
+
+    <!--    android:id defines an ID for the fragment that you can use to reference the destination elsewhere in this XML
+            android:name declares the fully qualified class name of the fragment to instantiate when you navigate to that destination.
+            tools:layout specifies what layout should be shown in the graphical editor. -->
+
+    <fragment
+        android:id="@+id/fragTenantPersonalDetails"
+        android:name="com.sandeep.digitalmanager.tenantRegistration.FragTenantPersonalDetails"
+        android:label="FragTenantPersonalDetails">
+        <action
+            android:id="@+id/action_fragTenantPersonalDetails_to_fragTenantOccupationDetails"
+            app:destination="@+id/fragTenantOccupationDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragTenantOccupationDetails"
+        android:name="com.sandeep.digitalmanager.tenantRegistration.FragTenantOccupationDetails"
+        android:label="FragTenantOccupationDetails"
+        tools:layout="@layout/frag_tenant_occupation_details">
+        <argument
+            android:name="tenantOccupation"
+            app:argType="com.sandeep.digitalmanager.tenantRegistration.model.TenantOccupation" />
+        <action
+            android:id="@+id/action_fragTenantOccupationDetails_to_fragTenantRentDetails"
+            app:destination="@+id/fragTenantRentDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragTenantRentDetails"
+        android:name="com.sandeep.digitalmanager.tenantRegistration.FragTenantRentDetails"
+        android:label="FragTenantRentDetails" />
+</navigation>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/occupation_detail_college_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:inputType="text"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:hint="Enter college name..." />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/occupation_detail_course_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:inputType="text"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/occupation_detail_college_name_et"
+            tools:hint="Enter course name..." />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/occupation_detail_mobile_no_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:inputType="number"
+            android:maxLength="10"
+            android:singleLine="true"
+            android:text="7878787878"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/occupation_detail_course_name_et"
+            tools:hint="Enter your mobile number..." />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/add_line1_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="#23, Lake Vista"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/occupation_detail_mobile_no_et"
+            tools:hint="College address" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/add_landmark_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="RBD Still Water"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_line1_et"
+            tools:hint="Landmark..." />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/add_state_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="Karnatka"
+            app:layout_constraintEnd_toStartOf="@+id/add_district_et"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_landmark_et"
+            tools:hint="State" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/add_district_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginEnd="@dimen/margin_extra_large"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="Banglore"
+            app:layout_constraintBottom_toBottomOf="@+id/add_state_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/add_state_et"
+            app:layout_constraintTop_toTopOf="@+id/add_state_et"
+            tools:hint="District" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/add_pin_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_xxmedium"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:text="127306"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_state_et"
+            tools:hint="PIN Code" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

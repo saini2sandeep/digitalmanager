@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Data to make available to the XML via data binding. In this case,
+    the whole ViewModel, so that we can access the LiveData,
+    click handlers and state variables -->
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sandeep.digitalmanager.tenantRegistration.TenantRegViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/personal_detail_btn_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxmedium">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:text="Sandeep"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint="Enter your name..."
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_last_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint="Enter your last name..."
+                    android:text="Saini"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_name_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_father_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:text="Naresh Kumar"
+                    android:hint="Enter your father name..."
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_last_name_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_mobile_no_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:maxLength="10"
+                    android:text="7878787878"
+                    android:hint="Enter your mobile number..."
+                    android:inputType="number"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_father_name_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_email_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:text="sandeep@g.com"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint="Enter your email..."
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_mobile_no_et" />
+
+                <TextView
+                    android:id="@+id/personal_detail_add_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:singleLine="true"
+                    android:text="@{viewModel.name}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_email_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_line1_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint="Flat/House no.."
+                    android:inputType="text"
+                    android:text="#23, Lake Vista"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_add_tv" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_line2_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint=""
+                    android:inputType="text"
+                    android:text="Harlur Banglore"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_add_line1_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_landmark_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:text="RBD Still Water"
+                    android:hint="Landmark..."
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_add_line2_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_state_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:hint="State"
+                    android:text="Karnatka"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toStartOf="@+id/personal_detail_add_district_et"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_add_landmark_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_district_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint="District"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:text="Banglore"
+                    app:layout_constraintBottom_toBottomOf="@+id/personal_detail_add_state_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/personal_detail_add_state_et"
+                    app:layout_constraintTop_toTopOf="@+id/personal_detail_add_state_et" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_pin_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:hint="PIN Code"
+                    android:text="127306"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:maxLength="6"
+                    app:layout_constraintEnd_toStartOf="@+id/personal_detail_add_landline_et"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_add_state_et" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_add_landline_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:hint="Land-Line"
+                    android:inputType="number"
+                    android:text="78478347"
+                    android:singleLine="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/personal_detail_add_pin_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/personal_detail_add_pin_et"
+                    app:layout_constraintTop_toTopOf="@+id/personal_detail_add_pin_et" />
+
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/personal_detail_have_vehicle_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:text="Do you have any vehicle?"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_add_pin_et" />
+
+
+                <TextView
+                    android:id="@+id/personal_detail_vehicle_details_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:singleLine="true"
+                    android:text="Add Vehicle Details"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_have_vehicle_rb" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/personal_detail_profession_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_extra_large"
+                    android:layout_marginTop="@dimen/margin_xxmedium"
+                    android:layout_marginEnd="@dimen/margin_extra_large"
+                    android:text="Student"
+                    android:hint="Working/Student"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personal_detail_vehicle_details_tv" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/personal_detail_btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scroll_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
